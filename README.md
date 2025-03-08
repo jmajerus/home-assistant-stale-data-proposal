@@ -2,9 +2,9 @@
 
 ## **Problem Statement**
 Home Assistant currently **does not handle stale sensor data consistently** across integrations. If a sensor stops reporting, **Home Assistant continues displaying the last known value**, even though the data may be outdated. This can lead to **critical safety issues**, particularly in scenarios such as:
-- **Temperature-based automations** (e.g., controlling heaters in nurseries, pet enclosures, medical use cases).
-- **Environmental monitoring** (e.g., CO2, smoke detection, water leak sensors).
-- **Health-related tracking** (e.g., presence/movement detection for elderly care).
+- **Temperature-based automations** (e.g., controlling heaters in nurseries, pet enclosures, medical use cases).  
+- **Environmental monitoring** (e.g., CO2, smoke detection, water leak sensors).  
+- **Health-related tracking** (e.g., presence/movement detection for elderly care).  
 
 There is no **system-wide mechanism** to mark sensor data as **stale or unavailable** when updates stop. Some integrations handle this at their own level, but many do not. Users currently rely on **custom automations or template sensors** to mitigate this issue, but this should be **a core feature, not a workaround**.
 
@@ -60,7 +60,7 @@ sensor:
 #### **Solution:**
 ✅ **Force a UI refresh when a sensor transitions to `unavailable`.**  
 ✅ **Ensure real-time updates in Lovelace, avoiding stale UI elements.**  
-✅ **Provide a visual indicator for sensors using a fallback value.**
+✅ **Provide a visual indicator for sensors using a fallback value.**  
 
 🔹 **Example UI Setting:**
 ```yaml
@@ -102,11 +102,11 @@ force_ui_refresh_on_stale: 300  # Hard refresh if UI hasn’t received updates i
 Beyond improving stale data handling, a **native Home Assistant frontend** would enable **a level of UI sophistication that is difficult to achieve in a browser-based environment**.
 
 ### **🔹 Why a Native UI Enhances the Home Assistant Experience**
-✅ **True WYSIWYG Dashboard Design:** Drag-and-drop UI components, live preview of automations, real-time visual updates.
-✅ **Advanced Visual Elements:** Smooth animations, vector-based scalable UIs, layered design capabilities.
-✅ **High-Speed Responsiveness:** No reliance on browser polling mechanisms, ensuring real-time updates.
-✅ **Offline Functionality:** Retains local state and caches data for seamless operation during network interruptions.
-✅ **Superior Layout Management:** Automatic resizing, docking, and grid-based design for a clean and flexible interface.
+✅ **True WYSIWYG Dashboard Design:** Drag-and-drop UI components, live preview of automations, real-time visual updates.  
+✅ **Advanced Visual Elements:** Smooth animations, vector-based scalable UIs, layered design capabilities.  
+✅ **High-Speed Responsiveness:** No reliance on browser polling mechanisms, ensuring real-time updates.  
+✅ **Offline Functionality:** Retains local state and caches data for seamless operation during network interruptions.  
+✅ **Superior Layout Management:** Automatic resizing, docking, and grid-based design for a clean and flexible interface.  
 
 ### **🔹 Viable Tools for Development**
 | **Development Tool** | **License** | **Key Strengths** |
