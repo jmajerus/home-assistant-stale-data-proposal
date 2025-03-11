@@ -1,4 +1,4 @@
-# **Appendix F: AI-Enhanced Sensor Handling & Anomaly Detection**
+# **Appendix B: AI-Enhanced Sensor Handling & Anomaly Detection**
 
 ## **Introduction**
 While Home Assistant provides robust automation capabilities, **AI can significantly enhance reliability, safety, and automation intelligence.** However, AI must be designed with a **safety-first approach**, particularly for temperature-sensitive devices like **space heaters**, where ignoring an outlier could lead to **catastrophic overheating and fire hazards**.
