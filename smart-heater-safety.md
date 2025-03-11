@@ -1,4 +1,4 @@
-# **Appendix G: Smart Heater Safety & Automation Failures**
+# **Appendix C: Smart Heater Safety & Automation Failures**
 
 ## **Introduction**
 Space heaters are among the most **dangerous household appliances**, responsible for a significant percentage of home fires and fatalities. According to the **National Fire Protection Association (NFPA),** space heaters account for **43% of all home heating fires** and **85% of heating-related deaths** annually. These statistics highlight the **critical need for proactive safety measures in smart home automation.**
