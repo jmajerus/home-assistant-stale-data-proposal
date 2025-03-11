@@ -1,38 +1,22 @@
-# **Proposal: System-Wide Handling of Stale Sensor Data in Home Assistant**
+# **Proposal: Enhancing Stale Data Handling in Home Assistant**
 
-## **Problem Statement**
-Home Assistant currently **does not handle stale sensor data consistently** across integrations. If a sensor stops reporting, **Home Assistant continues displaying the last known value**, even though the data may be outdated. This can lead to **critical safety issues**, particularly in scenarios such as:
-- **Temperature-based automations** (e.g., controlling heaters in nurseries, pet enclosures, medical use cases).  
-- **Environmental monitoring** (e.g., CO2, smoke detection, water leak sensors).  
-- **Health-related tracking** (e.g., presence/movement detection for elderly care).  
+## **Introduction**
+Home Assistant introduced the **`last_reported` attribute** in March 2024, which tracks the last time a state update was received, even if the state itself did not change. This is a **major improvement** for detecting stale data. However, additional enhancements are needed to **leverage `last_reported` effectively in automations, UI warnings, and fallback mechanisms**.
 
-There is no **system-wide mechanism** to mark sensor data as **stale or unavailable** when updates stop. Some integrations handle this at their own level, but many do not. Users currently rely on **custom automations or template sensors** to mitigate this issue, but this should be **a core feature, not a workaround**.
-
-Additionally, **browser-based dashboards present a unique challenge** in that stale data may continue to be displayed **even if the backend is no longer receiving updates**. This can lead users to unknowingly act on outdated information. Unlike **rich native applications**, web-based interfaces **do not inherently manage state internally**, making real-time UI updates more vulnerable to failures in WebSockets, polling mechanisms, or browser execution limits.
+This proposal focuses on **three key areas**:
+1. **Standardized `stale_after` handling** for marking entities as `unavailable` based on `last_reported`.
+2. **UI-level enhancements** to provide clear stale data warnings and auto-refresh mechanisms.
+3. **Fallback sensor handling and multi-sensor redundancy** for improved automation resilience.
 
 ---
 
-## **🚀 Proposed Solution: Standardized Stale Data Handling Across Home Assistant**
-### **🔹 1️⃣ Ensure `last_reported` is a Standard Attribute**
-- This should be **mandatory** for all integrations that update sensor values.
-- `last_reported` should update **whenever new data is received**, even if the state remains the same.
+## **🚀 Proposed Enhancements**
+### **1️⃣ Standardized `stale_after` Handling for Sensors**
+While `last_reported` tracks when data was last received, there is **no built-in mechanism** to mark a sensor as `unavailable` if no updates have arrived within a user-defined time.
 
-#### **Example of `last_reported` Implementation**
-```yaml
-sensor.shelly_ht_temperature:
-  state: "74.0"
-  last_changed: "2025-03-06T12:30:00Z"
-  last_updated: "2025-03-06T12:45:00Z"
-  last_reported: "2025-03-06T12:45:00Z"  # Consistently tracks last received update
-```
-
----
-
-### **🔹 2️⃣ Introduce a `stale_after` Attribute**
-A new **optional** `stale_after` setting should be **introduced across all sensors**, allowing users to define an **acceptable data freshness threshold**.
-
-- **If the sensor does not update within `stale_after` seconds, it is automatically marked as `unavailable`.**
-- Users **no longer need to write custom automations** to handle stale sensors.
+**🔹 Proposed Feature: `stale_after` Attribute**
+- Users should be able to specify a **timeout threshold** after which a sensor is considered `unavailable`.
+- This would remove the need for complex template sensors and automations to track stale entities.
 
 #### **Example Configuration in YAML**
 ```yaml
@@ -51,71 +35,90 @@ sensor:
 
 ---
 
-### **🔹 3️⃣ Implement UI-Level Fixes for Stale Data in Dashboards**
+### **2️⃣ UI Enhancements for Stale Data Warnings**
+Currently, Home Assistant dashboards **do not visually indicate stale data** unless users manually inspect timestamps. This can lead to **unintended automation failures** or decisions based on outdated information.
 
-#### **Problem:**
-- **Some dashboards fail to update sensor states until the page is refreshed manually.**
-- **If a sensor transitions to `unavailable`, the UI may still display the last known value, misleading users.**
+**🔹 Proposed Enhancements:**
+✅ Add a **warning banner** if sensor data has not updated in a user-defined time.  
+✅ Optionally **auto-refresh dashboards** when stale sensors are detected.  
+✅ Show **color-coded indicators** for sensors that are still reporting old data.
 
-#### **Solution:**
-✅ **Force a UI refresh when a sensor transitions to `unavailable`.**  
-✅ **Ensure real-time updates in Lovelace, avoiding stale UI elements.**  
-✅ **Provide a visual indicator for sensors using a fallback value.**  
-
-🔹 **Example UI Setting:**
+#### **Example UI Configuration**
 ```yaml
 refresh_ui_on_stale: true  # Forces UI refresh if a sensor hasn't updated
-stale_warning_threshold: 300  # Show warning banner if last update > 5 min ago
+stale_warning_threshold: 300  # Show warning banner if last update > 5 min
 ```
 
-🔹 **If data updates stop, display a banner:**  
-🚨 **“Warning: UI Data May Be Outdated”**  
-
-🔹 **Expose `used_sensor` as an attribute in UI elements**
-```yaml
-type: entity
-entity: sensor.cubby_temperature
-attributes:
-  - used_sensor
-  - last_reported
-color: >
-  {% if is_state_attr('sensor.cubby_temperature', 'used_sensor', 'fallback') %}
-    red
-  {% else %}
-    green
-  {% endif %}
-```
-
-✅ **Enable an "Auto-Refresh Stale UI Data" Option**
-- If a WebSocket connection **drops silently**, Home Assistant should **auto-reconnect instead of waiting for user action**.
-- If the UI hasn’t received new data in **X seconds**, it **forces a refresh**.
-
-🔹 **Example Auto-Refresh Configuration:**
-```yaml
-auto_reconnect_websockets: true  # Reconnect automatically on WebSocket drop
-force_ui_refresh_on_stale: 300  # Hard refresh if UI hasn’t received updates in 5 min
-```
+#### **Example Warning Message**
+🚨 **Warning: Sensor data may be outdated!**  
+_(Last update: 7 minutes ago)_
 
 ---
 
-## **🚀 Additional Benefits of a Native UI for Home Assistant**
-Beyond improving stale data handling, a **native Home Assistant frontend** would enable **a level of UI sophistication that is difficult to achieve in a browser-based environment**.
+### **3️⃣ Fallback Sensor Handling**
+If a sensor becomes unavailable, automations should have **an option to switch to a fallback sensor** to prevent failures.
 
-### **🔹 Why a Native UI Enhances the Home Assistant Experience**
-✅ **True WYSIWYG Dashboard Design:** Drag-and-drop UI components, live preview of automations, real-time visual updates.  
-✅ **Advanced Visual Elements:** Smooth animations, vector-based scalable UIs, layered design capabilities.  
-✅ **High-Speed Responsiveness:** No reliance on browser polling mechanisms, ensuring real-time updates.  
-✅ **Offline Functionality:** Retains local state and caches data for seamless operation during network interruptions.  
-✅ **Superior Layout Management:** Automatic resizing, docking, and grid-based design for a clean and flexible interface.  
+#### **Example Configuration**
+```yaml
+sensor:
+  - platform: fallback
+    name: "Cubby Temperature"
+    primary: sensor.cubby_floor_temp
+    fallback: sensor.cubby_ceiling_temp
+    offset_if_primary_fails: +4  # Adjust for known temperature difference
+```
 
-### **🔹 Viable Tools for Development**
-| **Development Tool** | **License** | **Key Strengths** |
-|---------------------|------------|------------------|
-| **Delphi Community Edition** | Free (Community) | Modern, rapid UI design, full design-time behaviors |
-| **Visual Studio Community (.NET MAUI, WPF, WinForms)** | Free (Community) | Strong Windows-native support, modern .NET framework |
-| **Lazarus + Free Pascal** | Open Source (GPL/LGPL) | Delphi-compatible, cross-platform, aligns with Home Assistant’s open-source principles |
+✅ **If the floor sensor fails, the system switches to the ceiling sensor (-4°F adjustment).**  
+✅ **If both fail, the entity is marked as `unavailable`.**
 
-This native UI initiative would complement **Home Assistant’s web-based dashboards** by providing **a more powerful and flexible interface for high-performance use cases**.
+---
+
+### **4️⃣ Multi-Sensor Redundancy & Voting Algorithms**
+For **critical sensors** (temperature, motion, air quality), a **multi-sensor voting algorithm** can improve reliability by discarding outliers.
+
+#### **Example: Majority Vote for Motion Detection**
+```yaml
+binary_sensor:
+  - platform: motion_voting
+    name: "Verified Motion Detector"
+    sensors:
+      - binary_sensor.motion_1
+      - binary_sensor.motion_2
+      - binary_sensor.motion_3
+    voting_threshold: 2  # At least 2 of 3 must detect motion
+```
+
+✅ **Prevents false positives from malfunctioning motion sensors.**
+
+#### **Example: Outlier Rejection for Temperature Sensors**
+```yaml
+sensor:
+  - platform: multi_sensor_voting
+    name: "Room Temperature"
+    sensors:
+      - sensor.temp_sensor_1
+      - sensor.temp_sensor_2
+      - sensor.temp_sensor_3
+    method: "median"
+    outlier_threshold: 3  # Ignore values deviating by 3+ degrees from median
+```
+
+✅ **Eliminates faulty sensor readings by using median-based filtering.**
+
+---
+
+## **📑 Appendices: Technical Considerations & Additional Enhancements**
+For more details on specific areas of this proposal, refer to the following appendices:
+
+- [A. Node-RED & Automation Considerations](node-red-considerations.md)
+- [B. Fallback Sensor Handling](fallback-sensor-handling.md)
+- [C. Multi-Sensor Redundancy & Voting Algorithms](multi-sensor-redundancy.md)
+- [D. Browser-Based UI Risks & Local State Management](browser-ui-risks.md)
+
+---
+
+## **🚀 Conclusion & Next Steps**
+By implementing `stale_after`, **UI-level warnings**, and **sensor redundancy mechanisms**, Home Assistant can further improve **sensor reliability and stale data visibility**. While `last_reported` was a significant step forward, these additions would help users **better manage stale data in automations and dashboards.**
 
 ---
 
