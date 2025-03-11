@@ -90,7 +90,7 @@ stale_warning_threshold: 300  # Show warning banner if last update > 5 min
 ## **Conclusion**
 Reliable **sensor-based automation is key** for seniors aging in place and for **remote virtual care systems**. Without proper stale data handling, these solutions can fail silently, putting lives at risk.
 
-By implementing:
+By implementing:  
 ✅ **`stale_after` thresholds** for marking outdated data as `unavailable`,    
 ✅ **Fallback sensor handling** for redundancy,    
 ✅ **Multi-sensor voting** to prevent false alarms, and  
