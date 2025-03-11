@@ -116,6 +116,25 @@ have warmed. Cooling mechanisms (conduction, convection, etc.) are required to k
 object from continuing to heat indefinitely. For materials with low thermal conductivity or high
 emissivity, there is the possibility of continued heating until ignition temperatures are reached."
 
+
+## **Recent Product Recalls and Lessons Learned**
+
+### **1️⃣ Govee Smart Heater Recall (2025)**  
+In **January 2025**, the CPSC announced a **recall of GoveeLife and Govee Smart Electric Space Heaters** ([link](https://www.cpsc.gov/Recalls/2025/GoveeLife-and-Govee-Smart-Electric-Space-Heaters-Recalled-Due-to-Fire-and-Burn-Hazards-Imported-by-Govee)). The heaters posed **fire and burn hazards** due to **internal wiring defects that could cause overheating.**
+
+**Key Lessons:**
+- **Overheating detection must be independent of the heater's internal control system.**
+- **Smart home automation should include a failsafe to shut off power to heaters if unexpected heat buildup is detected.**
+- **Temperature sensors should be positioned in a way that detects dangerous overheating, not just ambient conditions.**
+
+### **2️⃣ Atomi Smart Heater Recall (2024)**  
+In **December 2024**, the **Atomi Smart Heater** was recalled due to **fire and burn hazards** caused by **unexpected activation** ([link](https://www.cpsc.gov/Recalls/2024/Atomi-Recalls-Smart-Heaters-Due-to-Fire-and-Burn-Hazards)). The heater could turn on by itself due to a **faulty Wi-Fi module**, potentially creating a fire risk if left unattended.
+
+**Key Lessons:**
+- **Unintended activation of smart devices is a serious risk—automations should never assume a device is "off" unless independently verified.**
+- **AI and automation should monitor power consumption patterns to detect abnormal operation.**
+- **Home Assistant should support a "smart fail-safe mode" where users can configure conditions that force a heater to power off regardless of automation states.**
+
 🚨 **Integrating these lessons into Home Assistant ensures AI never dismisses a heating-related anomaly that could indicate a serious hazard.**
 
 ---
