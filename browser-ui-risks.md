@@ -49,8 +49,9 @@ auto_reconnect_websockets: true  # Automatically attempts reconnection
 - Maintains persistent local state across sessions.  
 - Ensures **faster and more reliable UI updates**.  
 ✅ **Potential Development Platforms:**  
+
 | **Tool** | **License** | **Key Strengths** |  
-|---------|------------|------------------|  
+|----------|-------------|-------------------|  
 | **Delphi Community Edition** | Free (Community) | Modern, full design-time behaviors |  
 | **Visual Studio (.NET MAUI, WPF)** | Free (Community) | Strong Windows-native support |  
 | **Lazarus + Free Pascal** | Open Source | Delphi-compatible, cross-platform |  
