@@ -1,4 +1,4 @@
-# **Appendix A: Node-RED & Automation Considerations**
+# **Appendix I: Node-RED & Automation Considerations**
 
 ## **Impact of Stale Data Handling on Automations**
 The introduction of `stale_after` and improved handling of unavailable sensor data in Home Assistant could have significant implications for **automations** and **Node-RED flows** that rely on continuous sensor updates.
