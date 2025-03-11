@@ -1,4 +1,4 @@
-# **Appendix H: Wired Sensors for Smart Home Resilience & Safety**
+# **Appendix D: Wired Sensors for Smart Home Resilience & Safety**
 
 ## **Introduction**
 The rapid adoption of **wireless sensors in home automation** has led to the near **complete abandonment of wired sensors**—despite their **proven reliability, lower cost, and resilience against wireless failure modes**.
