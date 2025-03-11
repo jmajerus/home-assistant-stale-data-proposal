@@ -1,4 +1,4 @@
-# **Appendix B: Fallback Sensor Handling**
+# **Appendix G: Fallback Sensor Handling**
 
 ## **Introduction**
 When a primary sensor becomes unavailable, it is often useful to have a **fallback sensor** that can be used to maintain system functionality. This is especially useful for **critical automations** such as heating control, environmental monitoring, or security alerts.
