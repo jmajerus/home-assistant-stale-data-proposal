@@ -63,51 +63,51 @@ To improve reliability, we propose **integrating wired sensors alongside wireles
 ## **4️⃣ Hardwired Sensors for Fire Safety & Heater Monitoring**
 
 ### **🚨 Using Wired Temperature Sensors for Runaway Heating Detection**
-✅ **Problem:** Wireless temperature sensors **only measure ambient air**, not heater components or flammable materials.
-✅ **Solution:** Install a **hardwired temperature probe inside a heater** or near its output to detect overheating **faster than an external wireless sensor.**
+✅ **Problem:** Wireless temperature sensors **only measure ambient air**, not heater components or flammable materials.  
+✅ **Solution:** Install a **hardwired temperature probe inside a heater** or near its output to detect overheating **faster than an external wireless sensor.**  
 
 📌 **Example:**
-- A **wireless thermostat** reports **70°F** but a **wired probe near a heater coil** detects **180°F and rising**. 🚨 This discrepancy triggers an **emergency shutoff.**
+- A **wireless thermostat** reports **70°F** but a **wired probe near a heater coil** detects **180°F and rising**. 🚨 This discrepancy triggers an **emergency shutoff.**  
 
 ---
 
-### **🚨 Using Wired Motion Sensors to Verify Room Occupancy**
-✅ **Problem:** Wireless motion sensors often fail due to **battery drain or sleep cycles**.
-✅ **Solution:** Use **a hardwired PIR motion sensor** for continuous occupancy monitoring, ensuring heaters shut off when a room is unoccupied.
+### **🚨 Using Wired Motion Sensors to Verify Room Occupancy**  
+✅ **Problem:** Wireless motion sensors often fail due to **battery drain or sleep cycles**.  
+✅ **Solution:** Use **a hardwired PIR motion sensor** for continuous occupancy monitoring, ensuring heaters shut off when a room is unoccupied.  
 
 📌 **Example:**
-- **A wireless motion sensor fails to detect movement** due to a dead battery. A **wired backup motion sensor detects occupancy** and prevents the heater from shutting off unnecessarily.
+- **A wireless motion sensor fails to detect movement** due to a dead battery. A **wired backup motion sensor detects occupancy** and prevents the heater from shutting off unnecessarily.  
 
 ---
 
 ## **5️⃣ Implementation: How Home Assistant Can Integrate Hardwired Sensors**
 
-✅ **GPIO & Analog Sensor Support**
-- ESPHome, Raspberry Pi GPIO, and Arduino integration should be **better documented and promoted** for Home Assistant users.
-- **Simple 1-Wire, I²C, and analog voltage sensors** should be **encouraged** for safety-critical applications.
+✅ **GPIO & Analog Sensor Support**  
+- ESPHome, Raspberry Pi GPIO, and Arduino integration should be **better documented and promoted** for Home Assistant users.  
+- **Simple 1-Wire, I²C, and analog voltage sensors** should be **encouraged** for safety-critical applications.  
 
-✅ **Failsafe Mode for Critical Devices**
-- **If a wireless sensor fails, a wired sensor should automatically take over.**
-- **If a wired sensor detects an emergency (e.g., high heat), it overrides all automation rules.**
+✅ **Failsafe Mode for Critical Devices**  
+- **If a wireless sensor fails, a wired sensor should automatically take over.**  
+- **If a wired sensor detects an emergency (e.g., high heat), it overrides all automation rules.**  
 
-✅ **AI-Powered Cross-Verification**
-- AI should **compare readings from wired and wireless sensors**—if one fails, the other can **validate or reject its data**.
-- If a **wireless sensor reports a dangerously high value**, but a **wired backup says it's fine**, the system can prompt for **manual intervention before taking drastic actions**.
+✅ **AI-Powered Cross-Verification**  
+- AI should **compare readings from wired and wireless sensors**—if one fails, the other can **validate or reject its data**.  
+- If a **wireless sensor reports a dangerously high value**, but a **wired backup says it's fine**, the system can prompt for **manual intervention before taking drastic actions**.  
 
-✅ **Standardized Hybrid Sensor Recommendations**
-- Home Assistant should provide **best practices** for combining **wired and wireless sensors** to improve automation resilience.
+✅ **Standardized Hybrid Sensor Recommendations**  
+- Home Assistant should provide **best practices** for combining **wired and wireless sensors** to improve automation resilience.  
 
 ---
 
-## **🚀 Conclusion: The Case for Wired Sensors in Smart Homes**
-Smart home automation has **forgotten the reliability of wired sensors** in favor of **convenient but failure-prone wireless solutions.**
+## **🚀 Conclusion: The Case for Wired Sensors in Smart Homes**  
+Smart home automation has **forgotten the reliability of wired sensors** in favor of **convenient but failure-prone wireless solutions.**  
 
-💡 **A hybrid approach—combining wired and wireless sensors—offers the best of both worlds:**
-- **Reliability of wired connections** for **critical safety monitoring**.
-- **Flexibility of wireless devices** for **non-essential automations**.
-- **AI-driven cross-checking** for **error detection and system resilience**.
+💡 **A hybrid approach—combining wired and wireless sensors—offers the best of both worlds:**  
+- **Reliability of wired connections** for **critical safety monitoring**.  
+- **Flexibility of wireless devices** for **non-essential automations**.  
+- **AI-driven cross-checking** for **error detection and system resilience**.  
 
-🚨 **By reintegrating wired sensors, Home Assistant can prevent critical automation failures and ensure safety-first operation in smart homes.**
+🚨 **By reintegrating wired sensors, Home Assistant can prevent critical automation failures and ensure safety-first operation in smart homes.**  
 
 ---
 
