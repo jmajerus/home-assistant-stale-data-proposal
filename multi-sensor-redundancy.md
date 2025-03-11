@@ -1,4 +1,4 @@
-# **Appendix C: Multi-Sensor Redundancy & Voting Algorithms**
+# **Appendix H: Multi-Sensor Redundancy & Voting Algorithms**
 
 ## **Introduction**
 For systems that rely on multiple sensors (e.g., temperature monitoring, motion detection, air quality), data inconsistencies between sensors can occur. To improve reliability, a **multi-sensor redundancy strategy** using a **voting algorithm** can discard outliers and generate a more accurate reading.
