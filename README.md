@@ -115,7 +115,7 @@ As populations age, smart home technologies are becoming **essential for aging i
 ## **Additional Appendices**
 🔹 **[Appendix G: Fallback Sensor Handling](fallback-sensor-handling.md)**  
 🔹 **[Appendix H: Multi-Sensor Redundancy & Voting Algorithms](multi-sensor-redundancy.md)**  
-🔹 **[Appendix I: Node-RED & Automation Considerations](node-red-automation.md)**  
+🔹 **[Appendix I: Node-RED & Automation Considerations](node-red-considerations.md)**  
 
 
 🚀 **By integrating these enhancements, Home Assistant can move from automation to intelligent, safety-first home management.**
