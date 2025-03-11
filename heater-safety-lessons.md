@@ -8,9 +8,9 @@ Recent **real-world heater failures** underscore why Home Assistant and other sm
 ---
 
 ## **1️⃣ The Danger of Runaway Radiant Flux**
-A **2004 report from the U.S. Consumer Product Safety Commission** ([link](https://www.cpsc.gov/s3fs-public/pdfs/blk_media_HeaterFeb04.pdf)) explains how certain heaters, particularly **radiant heaters**, can **overheat objects indefinitely** due to uncontrolled energy transfer. Unlike air heaters, radiant heaters do not stop heating an object once it reaches a stable temperature.
+A **2004 letter to Underwriters Laboratories from the U.S. Consumer Product Safety Commission** ([link](https://www.cpsc.gov/s3fs-public/pdfs/blk_media_HeaterFeb04.pdf)) explains how certain heaters, particularly **radiant heaters**, can **overheat objects indefinitely** due to uncontrolled energy transfer. Unlike air heaters, radiant heaters do not stop heating an object once it reaches a stable temperature.
 
-🚨 **Critical Safety Warning from the CPSC Report:**
+🚨 **Critical Safety Warning from the CPSC Letter:**
 > "Unlike air heaters, radiant heaters have the possibility of raising the surface temperature
 of an object in the path of the radiant flux very high. With a heating element temperature of
 hundreds of degrees Celsius, radiant heaters will continue to transfer energy to objects after they
