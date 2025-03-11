@@ -116,6 +116,7 @@ For more details on specific areas of this proposal, refer to the following appe
 - [D. Browser-Based UI Risks & Local State Management](browser-ui-risks.md)
 - [E. Aging in Place & Home-Based Virtual Care](aging-in-place.md)
 - [F. AI-Enhanced Sensor Handling & Anomaly Detection](ai-enhanced-sensor-handling.md)
+- [G. Smart Heater Safety & Automation Failures](heater-safety-lessons.md)
 ---
 
 ## **🚀 Conclusion & Next Steps**
