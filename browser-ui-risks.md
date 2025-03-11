@@ -1,4 +1,4 @@
-# **Appendix D: Browser-Based UI Risks & Local State Management**
+# **Appendix E: Browser-Based UI Risks & Local State Management**
 
 ## **Introduction**
 Home Assistant now provides `last_reported`, which ensures that sensor updates are properly timestamped. However, **this data is not yet well-integrated into the frontend**, meaning users may still unknowingly act on stale values. Additionally, browser-based dashboards remain vulnerable to **stale UI issues, silent connection failures, and execution limitations**.
