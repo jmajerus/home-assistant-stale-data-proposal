@@ -115,6 +115,7 @@ For more details on specific areas of this proposal, refer to the following appe
 - [C. Multi-Sensor Redundancy & Voting Algorithms](multi-sensor-redundancy.md)
 - [D. Browser-Based UI Risks & Local State Management](browser-ui-risks.md)
 - [E. Aging in Place & Home-Based Virtual Care](aging-in-place.md)
+- [F. AI-Enhanced Sensor Handling & Anomaly Detection](ai-enhanced-sensor-handling.md)
 ---
 
 ## **🚀 Conclusion & Next Steps**
