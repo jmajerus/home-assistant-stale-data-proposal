@@ -1,4 +1,4 @@
-# **Appendix E: Aging in Place & Home-Based Virtual Care**
+# **Appendix F: Aging in Place & Home-Based Virtual Care**
 
 ## **Introduction**
 As global populations age, more seniors are choosing to remain in their homes rather than move to assisted living facilities. This concept, known as **“aging in place,”** is increasingly supported by **home automation, smart sensors, and virtual care solutions.** However, these systems are only as reliable as the **sensor data they depend on**—which makes robust stale data handling a critical component of any smart home healthcare setup.
