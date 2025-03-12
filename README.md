@@ -12,6 +12,8 @@ As smart home automation becomes more advanced, the **risks of failures, misfire
 
 💡 **A smarter, more resilient approach is needed.** This framework outlines a strategy for improving **Home Assistant’s safety, reliability, and automation resilience** to prevent dangerous failures before they happen.
 
+🔹 **Note:** While this proposal is framed around **Home Assistant**, many of the **best practices and recommendations apply to other home automation platforms** (e.g., OpenHAB, Hubitat, SmartThings, MQTT-based systems). The principles of **reliability, automation resilience, AI-enhanced safety, and multi-sensor verification** are relevant across all **smart home ecosystems.**
+
 ---
 
 ## **1️⃣ The Need for AI-Driven Safety Mechanisms**
@@ -118,4 +120,4 @@ As populations age, smart home technologies are becoming **essential for aging i
 🔹 **[Appendix I: Node-RED & Automation Considerations](node-red-considerations.md)**  
 
 
-🚀 **By integrating these enhancements, Home Assistant can move from automation to intelligent, safety-first home management.**
+🚀 **By integrating these enhancements, Home Assistant and other home automation platforms can move from automation to intelligent, safety-first home management.**
