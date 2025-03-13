@@ -6,6 +6,8 @@ Community Emergency Response Teams (CERT) provide crucial support in disaster re
 
 While traditional CERT training emphasizes **fire safety, power strip overloading, and basic home hazards**, it does not yet **fully account for the modern landscape of smart home technology, automation dependencies, and electrical safety in increasingly complex home setups.** Future CERT efforts will need to **adapt and expand** to address the role of smart home automation in disaster response and community resilience.
 
+🔹 **However, it is critical to emphasize that CERT priorities should always remain focused on life safety, first aid, and urgent disaster-related triage.** CERT volunteers are not expected to spend time **restoring home automation conveniences**, such as troubleshooting **Zigbee lighting networks** or reconfiguring **entertainment system automations**. Instead, the focus should be on **identifying and mitigating smart home failures that pose immediate safety risks, such as medical device malfunctions, heating/cooling failures, or electrical hazards.**
+
 ---
 
 ## **1️⃣ Why CERT Training Must Evolve for Smart Homes**
