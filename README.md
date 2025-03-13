@@ -227,6 +227,8 @@ As populations age, smart home technologies are becoming **essential for aging i
 ✅ **CERT training must expand to include automation failures and electrical safety.**  
 ✅ **Home automation data could assist in post-disaster community safety checks.**  
 
+🔹 **[See Appendix N: Home Automation and the Future of FEMA CERT](home-automation-cert.md)**
+
 ---
 
 🚀 **By integrating these enhancements, Home Assistant and other home automation platforms can move from automation to intelligent, safety-first home management.**
