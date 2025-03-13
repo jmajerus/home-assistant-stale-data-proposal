@@ -231,4 +231,13 @@ As populations age, smart home technologies are becoming **essential for aging i
 
 ---
 
+## **15. Certifications & Standards in Home Automation
+As smart home automation evolves, certification and regulatory oversight are becoming increasingly important. While individual devices often adhere to safety standards from organizations like UL, CE, FCC, and ISO, automation platforms and AI-driven systems remain largely unregulated.
+
+This appendix explores key certification bodies, the role of Matter certification in interoperability, and the future need for AI oversight in smart home automation to ensure safety, reliability, and user trust.
+
+🔹 **[See Appendix O: Certifications & Standards in Home Automation](home-automation-certifications.md)**
+
+---
+
 🚀 **By integrating these enhancements, Home Assistant and other home automation platforms can move from automation to intelligent, safety-first home management.**
