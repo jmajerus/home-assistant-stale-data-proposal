@@ -118,6 +118,10 @@ As populations age, smart home technologies are becoming **essential for aging i
 🔹 **[Appendix G: Fallback Sensor Handling](fallback-sensor-handling.md)**  
 🔹 **[Appendix H: Multi-Sensor Redundancy & Voting Algorithms](multi-sensor-redundancy.md)**  
 🔹 **[Appendix I: Node-RED & Automation Considerations](node-red-considerations.md)**  
-
+🔹 **[Appendix J: Preventing Freeze Damage & Hypothermia with Smart Home Automation](freeze-risk-automation.md)**  
+🔹 **[Appendix K: Automated Leak Detection & Flood Prevention](water-leak-detection.md)**  
+🔹 **[Appendix L: Smoke, Carbon Monoxide, & Gas Leak Detection in Smart Homes](smoke-co-gas-detection.md)**  
+🔹 **[Appendix M: Culture & Community Expectations in Home Automation](home-automation-culture.md)**  
+🔹 **[Appendix N: Appendix N: Home Automation and the Future of FEMA CERT](home-automation-cert.md)**  
 
 🚀 **By integrating these enhancements, Home Assistant and other home automation platforms can move from automation to intelligent, safety-first home management.**
