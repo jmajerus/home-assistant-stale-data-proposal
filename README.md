@@ -172,7 +172,7 @@ As populations age, smart home technologies are becoming **essential for aging i
 - Use **temperature safeguards** to trigger alerts or emergency heating if temperatures drop dangerously low.
 - Detect **HVAC failures early** to prevent extreme cold conditions.
 
-🔹 **[See Appendix J: Preventing Freeze Damage & Hypothermia](preventing-freeze-damage.md)**
+🔹 **[See Appendix J: Preventing Freeze Damage & Hypothermia](freeze-risk-automation.md)**
 
 ---
 
